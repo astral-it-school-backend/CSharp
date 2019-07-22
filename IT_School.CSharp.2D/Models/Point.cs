@@ -1,3 +1,5 @@
+using System;
+
 namespace IT_School.CSharp._2D.Models
 {
     public struct Point
@@ -12,7 +14,11 @@ namespace IT_School.CSharp._2D.Models
         }
         
         public void Shift(double x, double y)
-        { 
+        {
+            if (x == 0 || y == 0)
+            {
+                throw new InvalidOperationException("Noooooooo!!!");
+            }
             _x += x;
             _y += y;
         }
