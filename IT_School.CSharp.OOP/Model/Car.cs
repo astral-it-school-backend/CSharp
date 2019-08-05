@@ -2,16 +2,30 @@ using System;
 
 namespace IT_School.CSharp.OOP.Model
 {
-    public class Car
+    public class Car : Transport
     {
         private int _maxMass;
         private int _maxHeight;
         private Human[] _passangers;
         private int _countOfPassangers;
-        
-        public Car(){}
 
-        public Car(int maxMass, int maxHeight, int maxPassangers)
+        public static void SayCar()
+        {
+            Console.WriteLine("Car");
+        }
+
+        public static string SingleTon;
+
+        public Car(string name)
+        {
+            if (name.Length > 100)
+            {
+                name = name.Substring(0, 100);
+            }
+            _name = name;
+        }
+
+        public Car(int maxMass, int maxHeight, int maxPassangers, string name) : this(name)
         {
             _maxMass = maxMass;
             _maxHeight = maxHeight;
@@ -58,7 +72,7 @@ namespace IT_School.CSharp.OOP.Model
 
         private bool EnthialMass(Human newHuman)
         {
-            if (newHuman.GetMass() < _maxMass)
+            if (newHuman.Mass < _maxMass)
             {
                 return true;
             }
@@ -67,9 +81,18 @@ namespace IT_School.CSharp.OOP.Model
                 Console.WriteLine("Максимальная масса превышена");
                 return false;
             } 
+            
         }
         
+        public override void Move(string direction)
+        {
+            Console.WriteLine($"Едем {direction}");
+        }
         
+        public void MoveBase(string direction)
+        {
+            base.Move(direction);
+        }
         
     }
 }
