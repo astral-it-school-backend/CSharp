@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using IT_School.CSharp.OOP.Model;
 
 namespace IT_School.CSharp.OOP
@@ -28,10 +29,13 @@ namespace IT_School.CSharp.OOP
             var firstCarAsTransport = (Transport)firstCar;
             firstCarAsTransport.Move("направо");
 
-//            var rnd = new Random();
-//            var result = rnd.Next(1, 14);
-//            Console.WriteLine($"Hello {result}!");
+            var rnd = new Random();
+            var result = rnd.Next(1, 14);
+            Console.WriteLine($"Hello {result}!");
+
+
             Console.ReadKey();
         }
     }
 }
+
