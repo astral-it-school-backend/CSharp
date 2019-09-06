@@ -84,7 +84,7 @@ namespace IT_School.CSharp.OOP.Model
             
         }
         
-        public override void Move(string direction)
+        public new void Move(string direction)
         {
             Console.WriteLine($"Едем {direction}");
         }

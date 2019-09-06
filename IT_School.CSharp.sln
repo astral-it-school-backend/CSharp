@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IT_School.DelegatesAndEvent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IT_School.Generics", "IT_School.Generics\IT_School.Generics.csproj", "{C4D82E87-9677-4EE6-BF36-C1CF971918AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.Streams", "IT_School.CSharp.Streams\IT_School.CSharp.Streams.csproj", "{6F497919-F958-4F67-BF07-756E06A56E65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C4D82E87-9677-4EE6-BF36-C1CF971918AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4D82E87-9677-4EE6-BF36-C1CF971918AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4D82E87-9677-4EE6-BF36-C1CF971918AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F497919-F958-4F67-BF07-756E06A56E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F497919-F958-4F67-BF07-756E06A56E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F497919-F958-4F67-BF07-756E06A56E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F497919-F958-4F67-BF07-756E06A56E65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
