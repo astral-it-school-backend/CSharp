@@ -15,11 +15,15 @@ namespace IT_School.CSharp.Streams
 
 
 
- //           Console.WriteLine(workWithFile.ReadFile("test.txt"));
+            //           Console.WriteLine(workWithFile.ReadFile("test.txt"));
 
- 
-            TempFile tempFile = new TempFile();
-            Console.WriteLine(tempFile.Read());
+
+            using (TempFile tempFile = new TempFile())
+            {
+                tempFile.Write("Мы писали, мы писали, наши пальчики устали.");
+                Console.WriteLine(tempFile.Read());
+            }
+
             Console.ReadKey();
         }
     }

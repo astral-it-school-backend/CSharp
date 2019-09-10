@@ -10,8 +10,8 @@ namespace IT_School.CSharp.Streams
 
         public TempFile()
         {
-            //_fileStream = File.Create("temp.txt");
-            _fileStream = File.Open(Path.Combine(Directory.GetCurrentDirectory(), "storage", "test.txt"),FileMode.Open);
+            _fileStream = File.Create("temp.txt");
+            //_fileStream = File.Open(Path.Combine(Directory.GetCurrentDirectory(), "storage", "test.txt"),FileMode.Open);
         }
 
         public string Read()
@@ -29,11 +29,20 @@ namespace IT_School.CSharp.Streams
 
             return  Encoding.UTF8.GetString(buffer);
         }
-        
+
+        public void Write(string text)
+        {
+            BinaryWriter bWriter = new BinaryWriter(_fileStream, Encoding.UTF8);
+            bWriter.Write(text);
+            _fileStream.Seek(0,SeekOrigin.Begin);
+        }
         
         
         public void Dispose()
         {
+            _fileStream.Dispose();
+            _fileStream.Close();
+            File.Delete("temp.txt");
         }
     }
 }

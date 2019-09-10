@@ -16,8 +16,11 @@ namespace IT_School.CSharp.Streams
         public void WriteFile(string filename, string text)
         {
             var file = File.Open(Path.Combine(_basePath, filename), FileMode.OpenOrCreate);
-            using var writer = new StreamWriter(file);
-            writer.Write(text);
+            using (var writer = new StreamWriter(file))
+            {
+                writer.Write(text);
+            }
+            
         }
 
         public string ReadFile(string filename)
