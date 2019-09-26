@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.Streams", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.HTTP", "IT_School.CSharp.HTTP\IT_School.CSharp.HTTP.csproj", "{4F4BBF14-2978-448E-8AE6-95353A05E427}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.Reflection", "IT_School.CSharp.Reflection\IT_School.CSharp.Reflection.csproj", "{8C566C4A-9824-49AD-8AFD-982E5B6E3060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{4F4BBF14-2978-448E-8AE6-95353A05E427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F4BBF14-2978-448E-8AE6-95353A05E427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F4BBF14-2978-448E-8AE6-95353A05E427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C566C4A-9824-49AD-8AFD-982E5B6E3060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C566C4A-9824-49AD-8AFD-982E5B6E3060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C566C4A-9824-49AD-8AFD-982E5B6E3060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C566C4A-9824-49AD-8AFD-982E5B6E3060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
