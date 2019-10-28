@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.Reflection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.DI", "IT_School.CSharp.DI\IT_School.CSharp.DI.csproj", "{9F77D7F9-206D-48BF-9BB1-FC36485ADA19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IT_School.CSharp.EFCore", "IT_School.CSharp.EFCore\IT_School.CSharp.EFCore.csproj", "{95EE6E16-EE25-42E5-ABA1-924B4ED993A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{9F77D7F9-206D-48BF-9BB1-FC36485ADA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F77D7F9-206D-48BF-9BB1-FC36485ADA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F77D7F9-206D-48BF-9BB1-FC36485ADA19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EE6E16-EE25-42E5-ABA1-924B4ED993A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EE6E16-EE25-42E5-ABA1-924B4ED993A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EE6E16-EE25-42E5-ABA1-924B4ED993A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EE6E16-EE25-42E5-ABA1-924B4ED993A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
