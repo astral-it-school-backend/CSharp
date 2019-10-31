@@ -16,11 +16,13 @@ namespace IT_School.CSharp.EFCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<Person>().HasKey(a => a.Id);
             modelBuilder.Entity<Person>()
                 .HasOne(a => a.Address)
                 .WithMany(a => a.Roomers)
-                .HasForeignKey(a => a.AddressId);
+                .HasForeignKey(a => a.AddressId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
