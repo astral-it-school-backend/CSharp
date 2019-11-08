@@ -15,9 +15,10 @@ namespace IT_School.CSharp.EFCore.Entities
 
         public virtual Address Address { get; set; }
 
-        public Person(string name, string surname, string patronymic)
+        public Person(string name, string surname, string patronymic, Guid addressId)
         {
             Id = Guid.NewGuid();
+            AddressId = addressId;
             Name = name;
             Surname = surname;
             Patronymic = patronymic;
