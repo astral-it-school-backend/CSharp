@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IT_School.CSharp.EFCore.Entities;
@@ -16,6 +17,20 @@ namespace IT_School.CSharp.EFCore.Serivces
         {
             _context = context;
             _logger = logger;
+        }
+
+        public async Task<List<Person>> GetRoomers(Guid addressId, int offset, int count)
+        {
+            var result = await _context.Persons
+                .Include(a => a.Address)
+                .Where(a => a.AddressId == addressId)
+                .Skip(offset).Take(count)
+                .OrderBy(a => a.Name)
+                .ToListAsync();
+            
+            result.ForEach(a => a.Address.Roomers = null);
+
+            return result;
         }
 
         public async Task ShowRoomers(Guid addressId)
