@@ -13,4 +13,8 @@
       <ProjectReference Include="..\IT_School.CSharp.EFCore\IT_School.CSharp.EFCore.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Views" />
+    </ItemGroup>
+
 </Project>

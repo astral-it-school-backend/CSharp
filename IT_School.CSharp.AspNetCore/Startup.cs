@@ -31,7 +31,11 @@ namespace IT_School.CSharp.AspNetCore
         
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
             services.AddControllers()
+                .AddViewComponentsAsServices()
+                .AddViewLocalization()
+                
                 //.AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
                 .AddJsonOptions(options =>
                 {
@@ -65,6 +69,7 @@ namespace IT_School.CSharp.AspNetCore
                 c.RoutePrefix = "api/help";
             });
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
 

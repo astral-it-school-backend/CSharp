@@ -1,0 +1,30 @@
+@model IT_School.CSharp.AspNetCore.ViewModels.IndexViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>it school</title>
+</head>
+<body>
+<p>@ViewBag.MyString</p>
+<a href="/api/help">
+    <button >swagger</button>
+</a>
+<table>
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+    </tr>
+    @foreach (var person in Model.Persons)
+    {
+        <tr>
+            <td>@person.Surname</td>
+            <td>@person.Name</td>
+            <td>@person.Patronymic</td>
+        </tr>
+    }
+</table>
+</body>
+</html>
