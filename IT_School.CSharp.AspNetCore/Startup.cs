@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using IT_School.CSharp.AspNetCore.Filters;
 using IT_School.CSharp.EFCore;
 using IT_School.CSharp.EFCore.Serivces;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,7 +34,7 @@ namespace IT_School.CSharp.AspNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddControllers()
+            services.AddControllers(options => options.Filters.Add<ExceptionFilter>())
                 .AddViewComponentsAsServices()
                 .AddViewLocalization()
                 
@@ -42,6 +44,8 @@ namespace IT_School.CSharp.AspNetCore
                     options.JsonSerializerOptions.IgnoreNullValues = true;
                 });
             services.AddLogging();
+
+            services.AddScoped<ExceptionFilter>();
             
             services.AddDbContext<DatabaseContext>(options =>
             {
@@ -62,6 +66,7 @@ namespace IT_School.CSharp.AspNetCore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

@@ -19,6 +19,13 @@ namespace IT_School.CSharp.EFCore.Serivces
             _logger = logger;
         }
 
+        public async Task<Address> GetAddressInfo(Guid addressId)
+        {
+            return await _context.Addresses
+                .AsNoTracking()
+                .SingleAsync(a => a.Id == addressId);
+        }
+
         public async Task<List<Person>> GetRoomers(Guid addressId, int offset, int count)
         {
             var result = await _context.Persons

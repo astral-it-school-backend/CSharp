@@ -23,6 +23,8 @@ namespace IT_School.CSharp.AspNetCore.Controllers
         public async Task<List<Person>> GetRoomers([FromRoute]Guid addressId, [FromQuery]int offset, [FromQuery]int count = 10)
         {
             var result = await _flatService.GetRoomers(addressId, offset, count);
+            
+            throw new InvalidOperationException("Ошибка");
 
 //            return JsonConvert.SerializeObject(result, new JsonSerializerSettings
 //            {
@@ -31,6 +33,13 @@ namespace IT_School.CSharp.AspNetCore.Controllers
 //            });
 
             return result;
+        }
+
+        [HttpGet]
+        [Route("address/{addressId}")]
+        public async Task<Address> GetAddressInfo([FromRoute]Guid addressId)
+        {
+            return await _flatService.GetAddressInfo(addressId);
         }
     }
 }
