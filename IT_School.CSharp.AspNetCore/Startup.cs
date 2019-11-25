@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IT_School.CSharp.AspNetCore.Filters;
+using IT_School.CSharp.AspNetCore.Options;
+using IT_School.CSharp.AspNetCore.Services;
 using IT_School.CSharp.EFCore;
 using IT_School.CSharp.EFCore.Serivces;
 using Microsoft.AspNetCore.Builder;
@@ -53,7 +55,13 @@ namespace IT_School.CSharp.AspNetCore
                     a => a.MigrationsAssembly("IT_School.CSharp.EFCore"));
             });
             
+            //services
             services.AddScoped<FlatService>();
+            services.AddScoped<PinterestClient>();
+            
+            //options
+            var options = new ApplicationOptions(_configuration["RemoteApi:PinterstApiKey"]);
+            services.AddSingleton(options);
 
             
             services.AddSwaggerGen(c =>
